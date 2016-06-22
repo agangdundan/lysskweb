@@ -1,0 +1,201 @@
+{
+  "main.html": {
+    "refer": [
+      "setting.html"
+    ],
+    "resources": []
+  },
+  "login.html": {
+    "resources": [
+      "js/app.js",
+      "js/mui.min.js",
+      "images/sinaweibo.png",
+      "css/mui.min.css",
+      "css/style.css",
+      "images/weixin.png",
+      "images/qq.png",
+      "js/mui.enterfocus.js"
+    ],
+    "refer": [
+      "main.html",
+      "unlock.html"
+    ]
+  },
+  "setting.html": {
+    "resources": [
+      "libs/easymob-webim-sdk/easemob.im-1.0.5.js",
+      "fonts/mui.ttf",
+      "libs/easymob-webim-sdk/json2.js",
+      "libs/easymob-webim-sdk/jquery-1.11.1.js",
+      "js/mui.locker.js",
+      "js/feedback.js",
+      "css/feedback-page.css",
+      "js/feedback-page.js",
+      "libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
+      "js/mui.view.js",
+      "images/iconfont-tianjia.png"
+    ],
+    "refer": [
+      "login.html"
+    ]
+  },
+  "unlock.html": {
+    "resources": [
+      "js/mui.locker.js"
+    ],
+    "refer": []
+  },
+  "tab-webview-main.html": {
+    "resources": [
+      "tab-webview-subpage-about.html",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/ylssk.css"
+    ],
+    "refer": [
+      "tab-webview-subpage-about.html",
+      "tab-webview-subpage-setting.html",
+      "tab-webview-subpage-chat.html",
+      "tab-webview-subpage-contact.html",
+      "tab-webview-subpage-index.html",
+      "tab-webview-subpage-ýTZ.html",
+      "tab-webview-subpage-ýTZ.html",
+      "tab-webview-subpage-shouru.html",
+      "tab-webview-subpage-yaoqing.html",
+      "tab-webview-subpage-wengdazhuan.html",
+      "tab-webview-subpage-wendazhuan.html",
+      "tab-webview-subpage-wode.html",
+      "tab-webview-subpage-setting2.html"
+    ]
+  },
+  "tab-webview-subpage-index.html": {
+    "resources": [
+      "images/img001.jpg",
+      "js/jquery.touchslider.min.js",
+      "images/nav004_h.jpg",
+      "images/nav003_h.jpg",
+      "images/nav004.jpg",
+      "images/nav001.jpg",
+      "images/nav005.jpg",
+      "images/nav002_h.jpg",
+      "images/test003.jpg",
+      "images/png002.png",
+      "images/nav005_h.jpg",
+      "images/test002.jpg",
+      "images/png003.png",
+      "images/loading.gif",
+      "js/jquery-1.8.2.min.js",
+      "images/test001.jpg",
+      "images/nav002.jpg",
+      "images/png001.png",
+      "images/nav001_h.jpg",
+      "images/nav003.jpg",
+      "css/ylssk.css"
+    ],
+    "refer": []
+  },
+  "tab-webview-subpage-shouru.html": {
+    "resources": [
+      "images/png008.png",
+      "images/png004.png",
+      "images/test007.jpg",
+      "images/img002.jpg",
+      "js/jquery-1.8.2.min.js",
+      "css/ylssk.css",
+      "6e-ýLý.html",
+      "6e-ýLý.html"
+    ],
+    "refer": []
+  },
+  "tab-webview-subpage-yaoqing.html": {
+    "resources": [
+      "images/ewm.jpg",
+      "images/png005.png",
+      "images/img012.jpg",
+      "images/img011.jpg",
+      "images/png006.png",
+      "images/img002.jpg",
+      "images/img010.jpg",
+      "images/test007.jpg",
+      "images/nav004_h.jpg",
+      "images/nav003_h.jpg",
+      "images/nav004.jpg",
+      "images/nav001.jpg",
+      "images/nav005.jpg",
+      "images/nav002_h.jpg",
+      "images/nav005_h.jpg",
+      "js/jquery-1.8.2.min.js",
+      "images/nav002.jpg",
+      "images/nav001_h.jpg",
+      "images/nav003.jpg",
+      "css/ylssk.css"
+    ],
+    "refer": []
+  },
+  "tab-webview-subpage-wengdazhuan.html": {
+    "resources": [
+      "images/png003.png",
+      "images/nav004_h.jpg",
+      "images/nav003_h.jpg",
+      "images/nav004.jpg",
+      "images/nav001.jpg",
+      "js/jquery-1.8.2.min.js",
+      "images/nav002.jpg",
+      "images/nav005.jpg",
+      "images/nav002_h.jpg",
+      "images/png001.png",
+      "images/nav001_h.jpg",
+      "images/png002.png",
+      "images/nav005_h.jpg",
+      "images/nav003.jpg"
+    ],
+    "refer": []
+  },
+  "tab-webview-subpage-wode.html": {
+    "resources": [
+      "images/img018.jpg",
+      "images/img017.jpg",
+      "images/test011.jpg",
+      "images/img020.jpg",
+      "images/img021.jpg",
+      "images/img019.jpg",
+      "images/img016.jpg",
+      "images/img002.jpg",
+      "js/jquery-1.8.2.min.js",
+      "css/ylssk.css"
+    ],
+    "refer": []
+  },
+  "tab-webview-subpage-wendazhuan.html": {
+    "resources": [
+      "images/png003.png",
+      "images/nav004_h.jpg",
+      "images/nav003_h.jpg",
+      "images/nav004.jpg",
+      "images/nav001.jpg",
+      "js/jquery-1.8.2.min.js",
+      "images/nav002.jpg",
+      "images/nav005.jpg",
+      "images/nav002_h.jpg",
+      "images/png001.png",
+      "images/nav001_h.jpg",
+      "images/png002.png",
+      "images/nav005_h.jpg",
+      "images/nav003.jpg",
+      "css/ylssk.css",
+      "images/img002.jpg"
+    ],
+    "refer": []
+  },
+  "tab-webview-subpage-setting2.html": {
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "js/feedback.js",
+      "js/mui.view.js",
+      "images/test011.jpg"
+    ]
+  }
+}
