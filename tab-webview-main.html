@@ -29,7 +29,7 @@
 				<span class="mui-icon mui-icon-home"></span>
 				<span class="mui-tab-label">分享赚</span>
 			</a>
-			<a class="mui-tab-item" href="tab-webview-subpage-wendazhuan.html">
+			<a class="mui-tab-item" href="webview.html">
 				<span class="mui-icon mui-icon-email"><span class="mui-badge">9</span></span>
 				<span class="mui-tab-label">问答赚</span>
 			</a>
@@ -47,10 +47,15 @@
 			</a>
 		</nav>
 		<script src="./js/mui.min.js"></script>
+		
+		<script type="text/javascript" src="./js/common.js"></script>
+		<link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8"/>
+		<script type="text/javascript" src="./js/immersed.js" ></script>
+		
 		<script type="text/javascript" charset="utf-8">
 			 //mui初始化
 			mui.init();
-			var subpages = ['tab-webview-subpage-index.html', 'tab-webview-subpage-wendazhuan.html', 'tab-webview-subpage-shouru.html', 'tab-webview-subpage-yaoqing.html', 'tab-webview-subpage-setting.html'];
+			var subpages = ['tab-webview-subpage-index.html', 'webview.html', 'tab-webview-subpage-shouru.html', 'tab-webview-subpage-yaoqing.html', 'tab-webview-subpage-setting.html'];
 			var subpage_style = {
 				//top: '45px',
 				top: '0px',
@@ -58,6 +63,15 @@
 			};
 			
 			var aniShow = {};
+			
+			// 创建自定义下拉刷新窗口
+			function customeRefresh(){
+				if(plus.os.name!="Android"){
+					 compatibleConfirm();
+				}else{
+					clicked('webview_pullhead_custom.html',true,true);
+				}
+			}
 			
 			 //创建子页面，首个选项卡页面显示，其它均隐藏；
 			mui.plusReady(function() {
@@ -79,6 +93,13 @@
 			var title = document.getElementById("title");
 			 //选项卡点击事件
 			mui('.mui-bar-tab').on('tap', 'a', function(e) {
+				
+				var tmpWebView = plus.webview.getWebviewById("cnt1");
+				if (tmpWebView) {
+					//alert("4444")
+					tmpWebView.hide();
+				}
+				
 				var targetTab = this.getAttribute('href');
 				if (targetTab == activeTab) {
 					return;

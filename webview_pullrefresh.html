@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<meta name="HandheldFriendly" content="true"/>
+		<meta name="MobileOptimized" content="320"/>
+		<title>Hello H5+</title>
+		<link rel="stylesheet" type="text/css" href="css/ylssk.css">
+		<script src="js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+var ws=null;
+var list=null;
+// 扩展API加载完毕，现在可以正常调用扩展API 
+function plusReady(){
+	ws=plus.webview.currentWebview();
+	ws.setPullToRefresh({support:true,
+		height:"50px",
+		range:"200px",
+		contentdown:{
+			caption:"下拉可以刷新"
+		},
+		contentover:{
+			caption:"释放立即刷新"
+		},
+		contentrefresh:{
+			caption:"正在刷新..."
+		}
+	},onRefresh);
+}
+// 判断扩展API是否准备，否则监听"plusready"事件
+if(window.plus){
+	plusReady();
+}else{
+	document.addEventListener("plusready",plusReady,false);
+}
+// DOM构建完成获取列表元素
+document.addEventListener("DOMContentLoaded",function(){
+	list=document.getElementById("hotlist");
+})
+// 刷新页面
+function onRefresh(){
+	setTimeout(function(){
+		if(list){
+			var item=document.createElement("div");
+			item.setAttribute("class", "nr_d");
+			item.innerHTML='<a href="分享赚-内页.html">'+
+								'<div class="nr_d_t">2热点文章标题标题标题标题标题</div>'+
+								'<img src="images/test001.jpg"/>'+
+								'<div class="nr_d_d">'+
+									'<i class="jh">精2</i>'+
+									'<span>3阅读：7558&nbsp;</span>'+
+									'<span>10分钟前5</span>'+
+								'</div>'+
+							'</a>';
+			list.insertBefore(item,list.firstChild);
+		}
+		ws.endPullToRefresh();
+	},1000);
+}
+		</script>
+		<link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8"/>
+	</head>
+	<body>
+		<div class="conMod" style="padding-bottom: 10%;">
+		    <!--content s-->
+		    <div class="contMod" id="hotlist" style="" >
+		        
+		        <div class="nr_d">
+		            <a href="分享赚-内页.html">
+		                <div class="nr_d_t">aa热点文章标题标题标题标题标题</div>
+		                <div class="nr_d_d">
+		                    <i class="jh">精</i>
+		                    <span>阅读：7558&nbsp;</span>
+		                    <span>10分钟前</span>
+		                </div>
+		            </a>
+		        </div>
+		        <div class="nr_d">
+		            <a href="分享赚-内页.html">
+		                <div class="nr_d_t">热点文章标题标题标题标题标题</div>
+		                <div class="nr_d_z">
+		                  <div id="slideBox" class="slideBox">
+		                    <div class="bd">
+		                      <ul>
+		                        <li><img src="images/test001.jpg"/></li>
+		                        <li><img src="images/test002.jpg"/></li>
+		                      </ul>
+		                    </div>
+		                    <div class="hd">
+		                      <ul>
+		                      </ul>
+		                    </div>
+		                  </div>
+		                  <script src="js/jquery.touchslider.min.js"></script>
+		                  <script type="text/javascript">
+		                    TouchSlide({ 
+		                          slideCell:"#slideBox",
+		                          titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+		                          mainCell:".bd ul", 
+		                          effect:"leftLoop",  //leftLoop循环滑动left非循环滑动
+		                          autoPage:true,//自动分页
+		                          autoPlay:true //自动播放
+		                      });
+		                  </script>
+		                </div>
+		                <div class="nr_d_d">
+		                    <i class="jh">热</i>
+		                    <span>阅读：7558&nbsp;</span>
+		                    <span>10分钟前</span>
+		                </div>
+		            </a>
+		        </div>
+		        <div class="nr_d">
+		            <a href="分享赚-内页.html">
+		                <div class="nr_d_dk">
+		                    <div class="nr_d_t">热点文章标题标题标题标题标题</div>
+		                    <div class="nr_d_d">
+		                        <i class="jh">精</i>
+		                        <span>阅读：7558&nbsp;</span>
+		                        <span>10分钟前</span>
+		                    </div>
+		                </div>
+		                <div class="nr_dt_d"><img src="images/test003.jpg"></div>
+		            </a>
+		        </div>
+		        <div class="nr_d">
+		            <a href="分享赚-内页.html">
+		                <div class="nr_d_t">热点文章标题标题标题标题标题</div>
+		                <div class="nr_d_i"><img src="images/test003.jpg"><img src="images/test003.jpg"><img src="images/test003.jpg"></div>
+		                <div class="nr_d_d">
+		                    <span>阅读：7558&nbsp;</span>
+		                    <span>10分钟前</span>
+		                </div>
+		            </a>
+		        </div>
+		        <div class="nr_d">
+		            <a href="分享赚-内页.html">
+		                <div class="nr_d_t">热点文章标题标题标题标题标题</div>
+		                <div class="nr_d_i"><img src="images/test003.jpg"><img src="images/test003.jpg"><img src="images/test003.jpg"></div>
+		                <div class="nr_d_d">
+		                    <span>阅读：7558&nbsp;</span>
+		                    <span>10分钟前</span>
+		                </div>
+		            </a>
+		        </div>
+		    </div>
+		    <!--content e-->
+		    
+		    <!--栏目展示 s-->
+		    <div class="lmzs">
+		        <div class="lmzs_bg"></div>
+		        <div class="lmzs_nr">
+		            <div class="lmzs_nrDiv">
+		            	<div class="lmzs_nr_l">切换栏目</div>
+		            	<div class="lmzs_nr_r"><img src="images/png003.png"></div>
+		            </div>
+		            <ul class="lmzsUl">
+		            	<li class="dq"><a href="###">热点</a></li>
+		            	<li><a href="###">糖尿病</a></li>
+		            	<li><a href="###">塑型</a></li>
+		            	<li><a href="###">两性</a></li>
+		            	<li><a href="###">母婴</a></li>
+		            	<li><a href="###">广告</a></li>
+		            	<li><a href="###">视频</a></li>
+		            </ul>
+		        </div>
+		    </div>
+		    <script>
+				$(function(){
+					//打开栏目
+					$('.inNav_l_r').click(function(){
+						$('.lmzs').show();
+					});
+					//关闭栏目
+					$('.lmzs_nr_r').click(function(){
+						$('.lmzs').hide();
+					});
+				});
+			</script>
+		    <!--栏目展示 e-->
+		</div>
+	</body>
+</html>

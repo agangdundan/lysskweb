@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<title>index</title>
+
+<link rel="stylesheet" type="text/css" href="css/ylssk.css">
+<script src="js/jquery-1.8.2.min.js"></script>
+
+</head>
+
+<body>
+<!--index top s-->
+<div class="inTop"><img src="images/img001.jpg"></div>
+<!--index top e-->
+<div class="conMod">
+    <div class="inNav">
+        <div class="inNav_l">
+        	<div class="inNavllmod">
+                <div class="inNav_l_l">
+                    <a class="dq" href="###">热点</a>
+                    <a href="###">糖尿病</a>
+                    <a href="###">塑型</a>
+                    <a href="###">两性</a>
+                    <a href="###">母婴</a>
+                    <a href="###">广告</a>
+                    <a href="###">视频</a>
+                </div>
+            </div>
+            <div class="inNav_l_r"><img src="images/png002.png"></div>
+        </div>
+        
+        <div class="inNav_r"><a href="###"><img src="images/png001.png"></a></div>
+        <!--搜索框 s-->
+        <div class="ssk"><input class="sskInt" type="text" placeholder="吃什么可以降糖？"></div>
+        <!--搜索框 e-->
+    </div>
+    <!--content s-->
+    <div class="contMod">
+        
+        <div class="nr_d">
+            <a href="分享赚-内页.html">
+                <div class="nr_d_t">热点文章标题标题标题标题标题</div>
+                <div class="nr_d_d">
+                    <i class="jh">精</i>
+                    <span>阅读：7558&nbsp;</span>
+                    <span>10分钟前</span>
+                </div>
+            </a>
+        </div>
+        <div class="nr_d">
+            <a href="分享赚-内页.html">
+                <div class="nr_d_t">热点文章标题标题标题标题标题</div>
+                <div class="nr_d_z">
+                  <div id="slideBox" class="slideBox">
+                    <div class="bd">
+                      <ul>
+                        <li><img src="images/test001.jpg"/></li>
+                        <li><img src="images/test002.jpg"/></li>
+                      </ul>
+                    </div>
+                    <div class="hd">
+                      <ul>
+                      </ul>
+                    </div>
+                  </div>
+                  <script src="js/jquery.touchslider.min.js"></script>
+                  <script type="text/javascript">
+                    TouchSlide({ 
+                          slideCell:"#slideBox",
+                          titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+                          mainCell:".bd ul", 
+                          effect:"leftLoop",  //leftLoop循环滑动left非循环滑动
+                          autoPage:true,//自动分页
+                          autoPlay:true //自动播放
+                      });
+                  </script>
+                </div>
+                <div class="nr_d_d">
+                    <i class="jh">热</i>
+                    <span>阅读：7558&nbsp;</span>
+                    <span>10分钟前</span>
+                </div>
+            </a>
+        </div>
+        <div class="nr_d">
+            <a href="分享赚-内页.html">
+                <div class="nr_d_dk">
+                    <div class="nr_d_t">热点文章标题标题标题标题标题</div>
+                    <div class="nr_d_d">
+                        <i class="jh">精</i>
+                        <span>阅读：7558&nbsp;</span>
+                        <span>10分钟前</span>
+                    </div>
+                </div>
+                <div class="nr_dt_d"><img src="images/test003.jpg"></div>
+            </a>
+        </div>
+        <div class="nr_d">
+            <a href="分享赚-内页.html">
+                <div class="nr_d_t">热点文章标题标题标题标题标题</div>
+                <div class="nr_d_i"><img src="images/test003.jpg"><img src="images/test003.jpg"><img src="images/test003.jpg"></div>
+                <div class="nr_d_d">
+                    <span>阅读：7558&nbsp;</span>
+                    <span>10分钟前</span>
+                </div>
+            </a>
+        </div>
+        <div class="nr_d">
+            <a href="分享赚-内页.html">
+                <div class="nr_d_t">热点文章标题标题标题标题标题</div>
+                <div class="nr_d_i"><img src="images/test003.jpg"><img src="images/test003.jpg"><img src="images/test003.jpg"></div>
+                <div class="nr_d_d">
+                    <span>阅读：7558&nbsp;</span>
+                    <span>10分钟前</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!--content e-->
+    
+    <!--栏目展示 s-->
+    <div class="lmzs">
+        <div class="lmzs_bg"></div>
+        <div class="lmzs_nr">
+            <div class="lmzs_nrDiv">
+            	<div class="lmzs_nr_l">切换栏目</div>
+            	<div class="lmzs_nr_r"><img src="images/png003.png"></div>
+            </div>
+            <ul class="lmzsUl">
+            	<li class="dq"><a href="###">热点</a></li>
+            	<li><a href="###">糖尿病</a></li>
+            	<li><a href="###">塑型</a></li>
+            	<li><a href="###">两性</a></li>
+            	<li><a href="###">母婴</a></li>
+            	<li><a href="###">广告</a></li>
+            	<li><a href="###">视频</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+		$(function(){
+			//打开栏目
+			$('.inNav_l_r').click(function(){
+				$('.lmzs').show();
+			});
+			//关闭栏目
+			$('.lmzs_nr_r').click(function(){
+				$('.lmzs').hide();
+			});
+		});
+	</script>
+    <!--栏目展示 e-->
+</div>
+<!--footer s-->
+<!--div class="footNav">
+	<ul class="footNavUl">
+    	<li class="f_close">
+        <a href="index.html">
+        	<span class="f_i"><img src="images/nav001.jpg"></span>
+        	<span class="f_i f_i_h"><img src="images/nav001_h.jpg"></span>
+        	<span class="f_w">分享赚</span>
+        </a>
+        </li>
+    	<li>
+        <a href="问答赚.html">
+        	<span class="f_i"><img src="images/nav002.jpg"></span>
+        	<span class="f_i f_i_h"><img src="images/nav002_h.jpg"></span>
+        	<span class="f_w">问答赚</span>
+        </a>
+        </li>
+    	<li>
+        <a href="收入.html">
+        	<span class="f_i"><img src="images/nav003.jpg"></span>
+        	<span class="f_i f_i_h"><img src="images/nav003_h.jpg"></span>
+        	<span class="f_w">收入</span>
+        </a>
+        </li>
+    	<li>
+        <a href="邀请.html">
+        	<span class="f_i"><img src="images/nav004.jpg"></span>
+        	<span class="f_i f_i_h"><img src="images/nav004_h.jpg"></span>
+        	<span class="f_w">邀请</span>
+        </a>
+        </li>
+    	<li>
+        <a href="我的.html">
+        	<span class="f_i"><img src="images/nav005.jpg"></span>
+        	<span class="f_i f_i_h"><img src="images/nav005_h.jpg"></span>
+        	<span class="f_w">我的</span>
+        </a>
+        </li>
+    </ul>
+</div-->
+<!--footer e-->
+</body>
+</html>
+

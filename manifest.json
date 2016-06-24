@@ -89,7 +89,7 @@
 			"autoclose": false,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
 			"waiting": true
 		},
-		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+		"runmode": "normal",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
 		"distribute": {
 			"apple": {
@@ -107,10 +107,7 @@
 				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
 				"permissions": ["<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>"]
 			},
-			"orientation": [
-				"portrait-primary",
-				"portrait-secondary"
-			],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+			"orientation": ["portrait-primary"],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
 			"icons": {
 				"ios": {
 					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
@@ -283,7 +280,9 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"css/ylssk.css",
-					"tab-webview-subpage-index.html"
+					"tab-webview-subpage-index.html",
+					"js/common.js",
+					"js/immersed.js"
 				],
 				"refer": [
 					"tab-webview-subpage-setting.html",
@@ -295,7 +294,8 @@
 					"tab-webview-subpage-wengdazhuan.html",
 					"tab-webview-subpage-wendazhuan.html",
 					"tab-webview-subpage-wode.html",
-					"tab-webview-subpage-setting2.html"
+					"tab-webview-subpage-setting2.html",
+					"webview.html"
 				],
 				"priority": 0
 			},
@@ -321,9 +321,23 @@
 					"images/png001.png",
 					"images/nav001_h.jpg",
 					"images/nav003.jpg",
-					"css/ylssk.css"
+					"css/ylssk.css",
+					"images/img018.jpg",
+					"images/img017.jpg",
+					"images/test011.jpg",
+					"images/img020.jpg",
+					"images/img021.jpg",
+					"images/img019.jpg",
+					"js/mui.view.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"分享赚-内页.html"
 				],
-				"refer": [],
+				"refer": [
+					"webview_pullhead_custom.html",
+					"webview_pullhead.html"
+				],
 				"priority": 0
 			},
 			"tab-webview-subpage-shouru.html": {
@@ -431,6 +445,82 @@
 					"js/feedback.js",
 					"js/mui.view.js",
 					"images/test011.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"tab-webview-subpage-setting.html": {
+				"resources": [
+					"images/img018.jpg",
+					"images/img017.jpg",
+					"images/test011.jpg",
+					"images/img020.jpg",
+					"images/img021.jpg",
+					"images/img019.jpg",
+					"js/mui.view.js",
+					"images/img002.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"webview.html": {
+				"resources": [
+					"css/common.css"
+				],
+				"refer": [
+					"webview_pullhead_custom.html"
+				],
+				"priority": 0
+			},
+			"webview_pullhead_custom.html": {
+				"resources": [
+					"webview_pullrefresh_custom.html",
+					"images/pull_arrow.png",
+					"css/common.css",
+					"images/pull_fresh.png",
+					"js/immersed.js",
+					"js/common.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"webview_pullrefresh_custom.html": {
+				"resources": [
+					"images/png003.png",
+					"js/jquery.touchslider.min.js",
+					"images/test002.jpg",
+					"images/test001.jpg",
+					"images/test003.jpg",
+					"images/png001.png",
+					"images/png002.png",
+					"css/common.css",
+					"images/loading.gif",
+					"js/jquery-1.8.2.min.js",
+					"css/ylssk.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"webview_pullhead.html": {
+				"resources": [
+					"webview_pullrefresh.html",
+					"css/common.css",
+					"js/common.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"webview_pullrefresh.html": {
+				"resources": [
+					"images/png003.png",
+					"js/jquery.touchslider.min.js",
+					"images/test002.jpg",
+					"images/loading.gif",
+					"images/test001.jpg",
+					"images/test003.jpg",
+					"js/jquery-1.8.2.min.js",
+					"css/ylssk.css",
+					"分享赚-内页.html"
 				],
 				"refer": [],
 				"priority": 0

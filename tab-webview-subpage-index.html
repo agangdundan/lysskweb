@@ -1,199 +1,366 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-<title>index</title>
 
-<link rel="stylesheet" type="text/css" href="css/ylssk.css">
-<script src="js/jquery-1.8.2.min.js"></script>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link rel="stylesheet" href="./css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/ylssk.css">
+		<script src="js/jquery-1.8.2.min.js"></script>
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			.mui-views,
+			.mui-view,
+			.mui-pages,
+			.mui-page,
+			.mui-page-content {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #efeff4;
+			}
+			.mui-pages {
+				top: 46px;
+				height: auto;
+			}
+			.mui-scroll-wrapper,
+			.mui-scroll {
+				background-color: #efeff4;
+			}
+			.mui-page.mui-transitioning {
+				-webkit-transition: -webkit-transform 300ms ease;
+				transition: transform 300ms ease;
+			}
+			.mui-page-left {
+				-webkit-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+			}
+			.mui-ios .mui-page-left {
+				-webkit-transform: translate3d(-20%, 0, 0);
+				transform: translate3d(-20%, 0, 0);
+			}
+			.mui-navbar {
+				position: fixed;
+				right: 0;
+				left: 0;
+				z-index: 10;
+				height: 80px;
+				background-color: #f7f7f8;
+			}
+			.mui-navbar .mui-bar {
+				position: absolute;
+				background: transparent;
+				text-align: center;
+			}
+			.mui-android .mui-navbar-inner.mui-navbar-left {
+				opacity: 0;
+			}
+			.mui-ios .mui-navbar-left .mui-left,
+			.mui-ios .mui-navbar-left .mui-center,
+			.mui-ios .mui-navbar-left .mui-right {
+				opacity: 0;
+			}
+			.mui-navbar .mui-btn-nav {
+				-webkit-transition: none;
+				transition: none;
+				-webkit-transition-duration: .0s;
+				transition-duration: .0s;
+			}
+			.mui-navbar .mui-bar .mui-title {
+				display: inline-block;
+				width: auto;
+			}
+			.mui-page-shadow {
+				position: absolute;
+				right: 100%;
+				top: 0;
+				width: 16px;
+				height: 100%;
+				z-index: -1;
+				content: '';
+			}
+			.mui-page-shadow {
+				background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
+				background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
+			}
+			.mui-navbar-inner.mui-transitioning,
+			.mui-navbar-inner .mui-transitioning {
+				-webkit-transition: opacity 300ms ease, -webkit-transform 300ms ease;
+				transition: opacity 300ms ease, transform 300ms ease;
+			}
+			.mui-page {
+				display: none;
+			}
+			.mui-pages .mui-page {
+				display: block;
+			}
+			.mui-page .mui-table-view:first-child {
+				margin-top: 15px;
+			}
+			.mui-page .mui-table-view:last-child {
+				margin-bottom: 30px;
+			}
+			.mui-table-view {
+				margin-top: 20px;
+			}
+			
+			.mui-table-view span.mui-pull-right {
+				color: #999;
+			}
+			.mui-table-view-divider {
+				background-color: #efeff4;
+				font-size: 14px;
+			}
+			.mui-table-view-divider:before,
+			.mui-table-view-divider:after {
+				height: 0;
+			}
+			.head {
+				height: 40px;
+			}
+			#head {
+				line-height: 40px;
+			}
+			.head-img {
+				width: 60px;
+				height: 60px;
+			}
+			#head-img {
+				width: 55px;
+				max-width: 55px;
+				height: 55px;
+			}
+			.update {
+				font-style: normal;
+				color: #999999;
+				margin-right: -25px;
+				font-size: 15px
+			}
+			.mui-fullscreen {
+				position: fixed;
+				z-index: 20;
+				background-color: #000;
+			}
+			.mui-ios .mui-navbar .mui-bar .mui-title {
+				position: static;
+			}
+			
+			
+			
+			.mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				border-bottom: 0;
+				
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				color: #007aff;
+				border-bottom: 2px solid #007aff;
+				background: 0 0;
+				font-weight: 500;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+				color: inherit;
+				color: #FFF;
+				padding-left:8px;
+				padding-right:8px;
+				font-weight: 800;
+				border: 0;
+			}
+			.mui-segmented-control .mui-control-item.mui-active {
+				color: #fff;
+				background-color: #007aff;
+			}
+			.mui-segmented-control .mui-control-item:first-child {
+				border-left-width: 0;
+				
+			}
+			
+			
+			.mui-segmented-control.mui-scroll-wrapper {
+				height: 40px;
+			}
+			.mui-segmented-control .mui-control-item {
+				line-height: 40px;
+			}
+		</style>
+	</head>
 
-</head>
-
-<body>
-<!--index top s-->
-<div class="inTop"><img src="images/img001.jpg"></div>
-<!--index top e-->
-<div class="conMod">
-    <div class="inNav">
-        <div class="inNav_l">
-        	<div class="inNavllmod">
-                <div class="inNav_l_l">
-                    <a class="dq" href="###">热点</a>
-                    <a href="###">糖尿病</a>
-                    <a href="###">塑型</a>
-                    <a href="###">两性</a>
-                    <a href="###">母婴</a>
-                    <a href="###">广告</a>
-                    <a href="###">视频</a>
-                </div>
-            </div>
-            <div class="inNav_l_r"><img src="images/png002.png"></div>
-        </div>
-        
-        <div class="inNav_r"><a href="###"><img src="images/png001.png"></a></div>
-        <!--搜索框 s-->
-        <div class="ssk"><input class="sskInt" type="text" placeholder="吃什么可以降糖？"></div>
-        <!--搜索框 e-->
-    </div>
-    <!--content s-->
-    <div class="contMod">
-        
-        <div class="nr_d">
-            <a href="分享赚-内页.html">
-                <div class="nr_d_t">热点文章标题标题标题标题标题</div>
-                <div class="nr_d_d">
-                    <i class="jh">精</i>
-                    <span>阅读：7558&nbsp;</span>
-                    <span>10分钟前</span>
-                </div>
-            </a>
-        </div>
-        <div class="nr_d">
-            <a href="分享赚-内页.html">
-                <div class="nr_d_t">热点文章标题标题标题标题标题</div>
-                <div class="nr_d_z">
-                  <div id="slideBox" class="slideBox">
-                    <div class="bd">
-                      <ul>
-                        <li><img src="images/test001.jpg"/></li>
-                        <li><img src="images/test002.jpg"/></li>
-                      </ul>
-                    </div>
-                    <div class="hd">
-                      <ul>
-                      </ul>
-                    </div>
-                  </div>
-                  <script src="js/jquery.touchslider.min.js"></script>
-                  <script type="text/javascript">
-                    TouchSlide({ 
-                          slideCell:"#slideBox",
-                          titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
-                          mainCell:".bd ul", 
-                          effect:"leftLoop",  //leftLoop循环滑动left非循环滑动
-                          autoPage:true,//自动分页
-                          autoPlay:true //自动播放
-                      });
-                  </script>
-                </div>
-                <div class="nr_d_d">
-                    <i class="jh">热</i>
-                    <span>阅读：7558&nbsp;</span>
-                    <span>10分钟前</span>
-                </div>
-            </a>
-        </div>
-        <div class="nr_d">
-            <a href="分享赚-内页.html">
-                <div class="nr_d_dk">
-                    <div class="nr_d_t">热点文章标题标题标题标题标题</div>
-                    <div class="nr_d_d">
-                        <i class="jh">精</i>
-                        <span>阅读：7558&nbsp;</span>
-                        <span>10分钟前</span>
-                    </div>
-                </div>
-                <div class="nr_dt_d"><img src="images/test003.jpg"></div>
-            </a>
-        </div>
-        <div class="nr_d">
-            <a href="分享赚-内页.html">
-                <div class="nr_d_t">热点文章标题标题标题标题标题</div>
-                <div class="nr_d_i"><img src="images/test003.jpg"><img src="images/test003.jpg"><img src="images/test003.jpg"></div>
-                <div class="nr_d_d">
-                    <span>阅读：7558&nbsp;</span>
-                    <span>10分钟前</span>
-                </div>
-            </a>
-        </div>
-        <div class="nr_d">
-            <a href="分享赚-内页.html">
-                <div class="nr_d_t">热点文章标题标题标题标题标题</div>
-                <div class="nr_d_i"><img src="images/test003.jpg"><img src="images/test003.jpg"><img src="images/test003.jpg"></div>
-                <div class="nr_d_d">
-                    <span>阅读：7558&nbsp;</span>
-                    <span>10分钟前</span>
-                </div>
-            </a>
-        </div>
-    </div>
-    <!--content e-->
-    
-    <!--栏目展示 s-->
-    <div class="lmzs">
-        <div class="lmzs_bg"></div>
-        <div class="lmzs_nr">
-            <div class="lmzs_nrDiv">
-            	<div class="lmzs_nr_l">切换栏目</div>
-            	<div class="lmzs_nr_r"><img src="images/png003.png"></div>
-            </div>
-            <ul class="lmzsUl">
-            	<li class="dq"><a href="###">热点</a></li>
-            	<li><a href="###">糖尿病</a></li>
-            	<li><a href="###">塑型</a></li>
-            	<li><a href="###">两性</a></li>
-            	<li><a href="###">母婴</a></li>
-            	<li><a href="###">广告</a></li>
-            	<li><a href="###">视频</a></li>
-            </ul>
-        </div>
-    </div>
-    <script>
-		$(function(){
-			//打开栏目
-			$('.inNav_l_r').click(function(){
-				$('.lmzs').show();
-			});
-			//关闭栏目
-			$('.lmzs_nr_r').click(function(){
-				$('.lmzs').hide();
-			});
+	<body class="mui-fullscreen">
+		<!--页面主结构开始-->
+		<div id="app" class="mui-views">
+			<div class="mui-view">
+				<div class="mui-navbar">
+				</div>
+				<div class="mui-pages">
+				</div>
+			</div>
+		</div>
+		<!--页面主结构结束-->
+		<!--单页面开始-->
+		<div id="setting" class="mui-page">
+			<!--页面标题栏开始-->
+			<div class="mui-navbar-inner" >
+				<image src="./images/img001.jpg" height=86 width=100%></image>
+			</div>
+			<!--页面标题栏结束-->
+			<!--页面主内容区开始-->
+			<div class="mui-page-content" >
+				<!--<div class="mui-content">-->
+					<div id="slider" class="mui-slider mui-fullscreen" style="top:86px;width:100%;">
+						<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" 
+style="width:80%;background-color: #000;float:left;">
+							<div class="mui-scroll" style="background-color: #000;">
+								<a class="mui-control-item mui-active" href="#item1mobile">
+									热点
+								</a>
+								<a class="mui-control-item" href="#item2mobile">
+									糖尿病
+								</a>
+								<a class="mui-control-item" href="#item3mobile">
+									塑型
+								</a>
+								<a class="mui-control-item" href="#item4mobile">
+									两性
+								</a>
+								<a class="mui-control-item" href="#item5mobile">
+									母婴
+								</a>
+								<a class="mui-control-item" href="#item6mobile">
+									广告
+								</a>
+								<a class="mui-control-item" href="#item6mobile">
+									视频
+								</a>
+							</div>
+						</div>
+						
+						<div id="rightBar" style="position:relative; width:20%;float:right;height:40px;line-height: 40px;margin-left:0px;" >
+							<a  class="mui-icon mui-icon-arrowdown" style="line-height: 40px;color:#fff;font-weight:bolder;margin-left:calc((100%/2) - 25px);"></a>
+							<a  class="mui-icon mui-icon-search" style="line-height: 40px;color:#fff;font-weight:bolder;margin-left:2px;"></a>
+						</div>
+						  
+						<div class="mui-slider-group">
+							<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+								<div id="scroll1" class="mui-scroll-wrapper" style="height:700px;">
+									<div class="mui-scroll" style="height:700px;">
+										aaaa
+									</div>
+								</div>
+							</div>
+							<div id="item2mobile" class="mui-slider-item mui-control-content">
+								<div class="mui-scroll-wrapper">
+									<div class="mui-scroll">
+										bbb
+									</div>
+								</div>
+							</div>
+							<div id="item3mobile" class="mui-slider-item mui-control-content">
+								<div class="mui-scroll-wrapper">
+									<div class="mui-scroll">
+										ccc
+									</div>
+								</div>
+							</div>
+							<div id="item4mobile" class="mui-slider-item mui-control-content">
+								<div class="mui-scroll-wrapper">
+									<div class="mui-scroll">
+										ddd
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<!--</div>-->
+			</div>
+			<!--页面主内容区结束-->
+		</div>
+		
+	</body>
+	<script src="./js/mui.min.js "></script>
+	<script src="./js/mui.view.js "></script>
+	<script>
+		mui.init();
+		//初始化单页view
+		var viewApi = mui('#app').view({
+			defaultPage: '#setting'
 		});
-	</script>
-    <!--栏目展示 e-->
-</div>
-<!--footer s-->
-<!--div class="footNav">
-	<ul class="footNavUl">
-    	<li class="f_close">
-        <a href="index.html">
-        	<span class="f_i"><img src="images/nav001.jpg"></span>
-        	<span class="f_i f_i_h"><img src="images/nav001_h.jpg"></span>
-        	<span class="f_w">分享赚</span>
-        </a>
-        </li>
-    	<li>
-        <a href="问答赚.html">
-        	<span class="f_i"><img src="images/nav002.jpg"></span>
-        	<span class="f_i f_i_h"><img src="images/nav002_h.jpg"></span>
-        	<span class="f_w">问答赚</span>
-        </a>
-        </li>
-    	<li>
-        <a href="收入.html">
-        	<span class="f_i"><img src="images/nav003.jpg"></span>
-        	<span class="f_i f_i_h"><img src="images/nav003_h.jpg"></span>
-        	<span class="f_w">收入</span>
-        </a>
-        </li>
-    	<li>
-        <a href="邀请.html">
-        	<span class="f_i"><img src="images/nav004.jpg"></span>
-        	<span class="f_i f_i_h"><img src="images/nav004_h.jpg"></span>
-        	<span class="f_w">邀请</span>
-        </a>
-        </li>
-    	<li>
-        <a href="我的.html">
-        	<span class="f_i"><img src="images/nav005.jpg"></span>
-        	<span class="f_i f_i_h"><img src="images/nav005_h.jpg"></span>
-        	<span class="f_w">我的</span>
-        </a>
-        </li>
-    </ul>
-</div-->
-<!--footer e-->
-</body>
-</html>
+		//初始化单页的区域滚动
+		mui('.mui-scroll-wrapper').scroll();
+		
+		
+		mui.plusReady(function() {
+			var page=mui.preload({
+				url:'webview_pullhead.html',
+				id:'cnt1',
+				styles:{
+					top:'126px',
+					bottom:'50px'
+				},
+				extras:{}
+			});
 
+
+
+			//pclicked('webview_pullhead.html',true,true);
+		});
+		
+		
+		// 预创建二级页面
+		var preate={};
+		function preateWebivew(id){
+			if(!preate[id]){
+				var w=plus.webview.create(id,id,{scrollIndicator:'none',scalable:false,popGesture:'hide'},{preate:true});
+				preate[id]=w;
+				w.addEventListener('close',function(){//页面关闭后可再次打开
+					_openw=null;
+					preate[id]&&(preate[id]=null);//兼容窗口的关闭
+				},false);
+			}
+		}
+		// 判断预载打开
+		var _openw=null;
+		function pclicked(id){
+			if(_openw){return;}
+			_openw=preate[id];
+			if(_openw){
+				if(_openw.showded){
+					_openw.show('auto');
+				}else{
+					_openw.show(as);
+					_openw.showded=true;
+				}
+				_openw=null;
+			}else{
+				_openw=plus.webview.create(id,id,{scrollIndicator:'none',scalable:false,popGesture:'hide'});
+				preate[id]=_openw;
+				_openw.addEventListener('loaded',function(){//叶面加载完成后才显示
+		//			setTimeout(function(){
+					_openw.show(as);
+					_openw.showded=true;
+					_openw=null;
+		//			},10);
+				},false);
+				_openw.addEventListener('close',function(){//页面关闭后可再次打开
+					_openw=null;
+					preate[id]&&(preate[id]=null);//兼容窗口的关闭
+				},false);
+			}
+		}
+		
+		
+		
+		
+		
+	</script>
+
+</html>
