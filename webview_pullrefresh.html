@@ -8,56 +8,62 @@
 		<title>Hello H5+</title>
 		<link rel="stylesheet" type="text/css" href="css/ylssk.css">
 		<script src="js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="js/mui.min.js" ></script>
 		<script type="text/javascript" charset="utf-8">
-var ws=null;
-var list=null;
-// 扩展API加载完毕，现在可以正常调用扩展API 
-function plusReady(){
-	ws=plus.webview.currentWebview();
-	ws.setPullToRefresh({support:true,
-		height:"50px",
-		range:"200px",
-		contentdown:{
-			caption:"下拉可以刷新"
-		},
-		contentover:{
-			caption:"释放立即刷新"
-		},
-		contentrefresh:{
-			caption:"正在刷新..."
-		}
-	},onRefresh);
-}
-// 判断扩展API是否准备，否则监听"plusready"事件
-if(window.plus){
-	plusReady();
-}else{
-	document.addEventListener("plusready",plusReady,false);
-}
-// DOM构建完成获取列表元素
-document.addEventListener("DOMContentLoaded",function(){
-	list=document.getElementById("hotlist");
-})
-// 刷新页面
-function onRefresh(){
-	setTimeout(function(){
-		if(list){
-			var item=document.createElement("div");
-			item.setAttribute("class", "nr_d");
-			item.innerHTML='<a href="分享赚-内页.html">'+
-								'<div class="nr_d_t">2热点文章标题标题标题标题标题</div>'+
-								'<img src="images/test001.jpg"/>'+
-								'<div class="nr_d_d">'+
-									'<i class="jh">精2</i>'+
-									'<span>3阅读：7558&nbsp;</span>'+
-									'<span>10分钟前5</span>'+
-								'</div>'+
-							'</a>';
-			list.insertBefore(item,list.firstChild);
-		}
-		ws.endPullToRefresh();
-	},1000);
-}
+			var ws=null;
+			var list=null;
+			// 扩展API加载完毕，现在可以正常调用扩展API 
+			function plusReady(){
+				ws=plus.webview.currentWebview();
+				ws.setPullToRefresh({support:true,
+					height:"50px",
+					range:"200px",
+					contentdown:{
+						caption:"下拉可以刷新"
+					},
+					contentover:{
+						caption:"释放立即刷新"
+					},
+					contentrefresh:{
+						caption:"正在刷新..."
+					}
+				},onRefresh);
+			}
+			// 判断扩展API是否准备，否则监听"plusready"事件
+			if(window.plus){
+				plusReady();
+			}else{
+				document.addEventListener("plusready",plusReady,false);
+			}
+			// DOM构建完成获取列表元素
+			document.addEventListener("DOMContentLoaded",function(){
+				list=document.getElementById("hotlist");
+			})
+
+			function openWin(type, id) {
+				mui.openWindow("index-inner.html", "inner");
+			}
+
+			// 刷新页面
+			function onRefresh(){
+				setTimeout(function(){
+					if(list){
+						var item=document.createElement("div");
+						item.setAttribute("class", "nr_d");
+						item.innerHTML='<a href="#" onclick="openWin();">'+
+											'<div class="nr_d_t">2热点文章标题标题标题标题标题</div>'+
+											'<img src="images/test001.jpg"/>'+
+											'<div class="nr_d_d">'+
+												'<i class="jh">精2</i>'+
+												'<span>3阅读：7558&nbsp;</span>'+
+												'<span>10分钟前5</span>'+
+											'</div>'+
+										'</a>';
+						list.insertBefore(item,list.firstChild);
+					} 
+					ws.endPullToRefresh();
+				},1000);
+			}
 		</script>
 		<link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8"/>
 	</head>
@@ -167,14 +173,14 @@ function onRefresh(){
 		        </div>
 		    </div>
 		    <script>
-				$(function(){
+				jQuery(function(){
 					//打开栏目
-					$('.inNav_l_r').click(function(){
-						$('.lmzs').show();
+					jQuery('.inNav_l_r').click(function(){
+						jQuery('.lmzs').show();
 					});
 					//关闭栏目
-					$('.lmzs_nr_r').click(function(){
-						$('.lmzs').hide();
+					jQuery('.lmzs_nr_r').click(function(){
+						jQuery('.lmzs').hide();
 					});
 				});
 			</script>
